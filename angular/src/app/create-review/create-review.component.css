@@ -1,0 +1,9 @@
+.wrapper{
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+.submit {background-color: blue; color: white;} 
+.cancel {background-color: orange; color: white;} 
+
+

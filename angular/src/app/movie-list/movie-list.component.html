@@ -1,0 +1,27 @@
+
+<div class = 'wrapper'>
+  <div class = 'movielist'><h1>Movie List</h1></div>
+  <!-- <a [routerLink] = "['/players','create']"> Add Players</a> -->
+  <!-- <a routerLink="/Service/Sign_in"><button class="btn btn-success pull-right" > Add A new Movie</button></a> -->
+  <div class = 'add'><a [routerLink]="['/movies','new']"><button>Add A new Movie</button></a></div>
+
+
+  <table border = 1>
+    <thead>
+      <tr>
+        <td>Movie Title</td>
+        <td>Available Actions</td>
+      </tr>
+      <tr *ngFor='let movie of movies'>
+        <td>{{movie.title}}</td>
+        <td><button [routerLink]="['/movies',movie._id]">Read Reviews</button>
+        <button [routerLink]="['/movies/review',movie._id]">Write review</button></td>
+        
+        <!-- <button [routerLink]="['edit',product.id]">Edit</button> -->
+      </tr>
+    </thead>
+  </table>
+
+
+</div>
+<router-outlet></router-outlet>

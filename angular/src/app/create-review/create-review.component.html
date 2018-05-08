@@ -1,0 +1,56 @@
+<div class = 'wrapper'>
+    <h3>Add a review for {{myMovie?.title}}</h3>
+      <form name = 'review' (submit)="onSubmit(form)" #form='ngForm'>
+    
+          Name : 
+          <input 
+          type="text"
+          name="name"
+          required
+          minlength="3"
+          [(ngModel)]="user.name"
+          #name='ngModel'
+          />
+    
+          
+          
+          <div class = 'side'*ngIf='name.touched && name.invalid'>Your must provide your name, at least 3 characters</div><br>
+          
+          Stars : 
+          <select type = 'number' value=1 name="stars" required [(ngModel)]="user.stars" #stars='ngModel' >
+           <option value=1>1</option>
+           <option value=2>2</option>
+           <option value=3>3</option>   
+           <option value=3>4</option> 
+           <option value=3>5</option> 
+         </select>
+          <!-- Stars : 
+          <input 
+          type="number"
+          name="stars"
+          required
+          [(ngModel)]="user.stars"
+          #stars='ngModel'
+          /> -->
+          <div class = 'side'*ngIf='stars.touched && stars.invalid'>Stars are required</div><br>
+    
+          Review : 
+          <input 
+          type="string"
+          name="review"
+          minlength="3"
+          required
+          [(ngModel)]="user.review"
+          #review='ngModel'
+          />
+          <div class = 'side'*ngIf='review.touched && review.invalid'>Review is required, at least 3 characters</div><br>
+    
+          <!-- <button type="submit" (click)='triggerEvent($event)' [disabled]="form.invalid">Submit</button>-->
+          <button class = 'cancel' type="submit"  [disabled]="form.invalid">Submit</button>
+          <button class = 'submit'(click)='onCancel()'>Cancel</button>
+          
+      </form> 
+    
+      </div>
+      <router-outlet></router-outlet>
+

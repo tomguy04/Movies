@@ -1,0 +1,77 @@
+<!-- <div *ngIf='registrationErrors.length'>
+  <ul class="alert alert-danger">
+    <li *ngFor='let error of registrationErrors'>{{error}}</li>
+  </ul>
+</div> -->
+
+
+<div class = 'wrapper'>
+    <h3>Submit Your Movie and Your Review</h3>
+      <form name = 'user' (submit)="onSubmit(form)" #form='ngForm'>
+    
+          Title : 
+          <input 
+          type="text"
+          name="title"
+          required
+          minlength="3"
+          [(ngModel)]="user.title"
+          #title='ngModel'
+          />
+    
+          
+          
+          <div class = 'side'*ngIf='title.touched && title.invalid'>Movie must have a title, at least 3 characters</div><br>
+          
+          Name : 
+          <input 
+          type="text"
+          name="name"
+          required
+          minlength = "3"
+          [(ngModel)]="user.name"
+          #name='ngModel'
+          />
+          <div class = 'side'*ngIf='name.touched && name.invalid'>Your must provide your name, at least 3 characters</div><br>
+    
+          Stars : 
+          <select type = 'number' value=1 name="stars" required [(ngModel)]="user.stars" #stars='ngModel' >
+           <option value=1>1</option>
+           <option value=2>2</option>
+           <option value=3>3</option>   
+           <option value=3>4</option> 
+           <option value=3>5</option> 
+         </select>
+
+          <!-- Stars : 
+          <input 
+          type="number"
+          name="stars"
+          required
+          [(ngModel)]="user.stars"
+          #stars='ngModel'
+          /> -->
+          <div class = 'side'*ngIf='stars.touched && stars.invalid'>Stars are required</div><br>
+    
+          Your Review : 
+          <input 
+          type="string"
+          name="review"
+          minlength = "3"
+          required
+          [(ngModel)]="user.review"
+          #review='ngModel'
+          />
+          <div class = 'side'*ngIf='review.touched && review.invalid'>Review is Required, at least 3 characters</div><br>
+    
+          <!-- <button type="submit" (click)='triggerEvent($event)' [disabled]="form.invalid">Submit</button>-->
+         
+        <button class="submit" type="submit"  [disabled]="form.invalid">Submit</button>
+        <button class="cancel" (click)='onCancel()'>Cancel</button>
+      </form> 
+    
+      </div>
+      <router-outlet></router-outlet>
+      
+
+

@@ -1,0 +1,27 @@
+<div class = 'title'><button class="button" (click)='onDelete(myMovie?._id)'>Delete Movie</button></div>
+<div class = 'wrapper'>
+  <h3>Reviews for {{myMovie?.title}}</h3>
+
+  <table border = 1>
+      <thead>
+        <tr>
+          <td>Reviewer</td>
+          <td>Stars</td>
+          <td>Reviews</td>
+        </tr>
+        <tr *ngFor='let review of myMovie?.bike'>
+          <td>{{review.name}}</td>
+          <td>{{review.stars}}</td>
+          <td>{{review.review}}</td>
+        <!-- <tr *ngFor='let movie of movies'> -->
+          <!-- <ng-container *ngIf="movie?._id == myMovie?._id"> -->
+
+              <!-- <td >{{review.name}}</td>
+              <td>{{review.stars}}</td>
+              <td>{{review.review}}</td>
+          </ng-container> -->
+    
+        </tr>
+      </thead>
+    </table>
+</div>

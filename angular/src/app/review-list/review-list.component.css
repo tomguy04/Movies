@@ -1,0 +1,13 @@
+.wrapper{
+    border: 2px solid black;
+    margin: 5px;
+    padding: 10px;
+}
+.title{
+    padding-left: 10px;
+    margin:0px;
+}
+
+.button {background-color: red; color: white;} 
+
+tr:nth-child(even) {background-color: #f2f2f2;}
